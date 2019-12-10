@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import java.math.RoundingMode
 
 
+/*
 class TicketHistoryAdapter (private var newsList: List<Ticket>, var callback: (Ticket) -> Unit) :
         RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -37,4 +38,4 @@ class TicketHistoryAdapter (private var newsList: List<Ticket>, var callback: (T
         }
     }
 
-}
+}*/

@@ -1,9 +1,10 @@
 package com.adrian.bucayan.ui.viewmodels.authentication
 
 import android.annotation.SuppressLint
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.ViewModel
+import android.util.Log
 import com.adrian.bucayan.data.remote.ApiInterface
 import com.adrian.bucayan.di.Repository
 import com.adrian.bucayan.models.ItunesResponse
@@ -20,7 +21,8 @@ import javax.inject.Inject
 
 
 
-class MainViewModel @Inject constructor(private val apiInterface: ApiInterface,  private val repository: Repository) : ViewModel() {
+class MyViewModel @Inject constructor(private val apiInterface: ApiInterface,
+                                      private val repository: Repository) : ViewModel() {
 
     lateinit var iTunesResponseObserver: DisposableObserver<Response<ItunesResponse>>
     var iTunesResponseResult: MutableLiveData<Response<ItunesResponse>> = MutableLiveData()
@@ -39,7 +41,7 @@ class MainViewModel @Inject constructor(private val apiInterface: ApiInterface, 
         return iTunesResponseLoader
     }
 
-    fun changePassword() {
+    fun search() {
 
         iTunesResponseObserver  = object : DisposableObserver<Response<ItunesResponse>>() {
 
@@ -52,8 +54,8 @@ class MainViewModel @Inject constructor(private val apiInterface: ApiInterface, 
                         var message = "An error occurred"
                         val errorJsonString = t.errorBody()?.string()
                         message = JsonParser().parse(errorJsonString)
-                            .asJsonObject["message"]
-                            .asString
+                                .asJsonObject["message"]
+                                .asString
                         Timber.e("message ", message)
                     }
                 }
@@ -89,5 +91,6 @@ class MainViewModel @Inject constructor(private val apiInterface: ApiInterface, 
                 .subscribe(iTunesResponseObserver)
 
     }
+
 
 }

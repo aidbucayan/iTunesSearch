@@ -2,7 +2,7 @@ package com.adrian.bucayan.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.support.v4.app.Fragment
 import dagger.android.support.AndroidSupportInjection
 
 abstract class BaseFragment : Fragment()  {

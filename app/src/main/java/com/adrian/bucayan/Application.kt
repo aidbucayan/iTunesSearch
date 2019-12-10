@@ -2,8 +2,8 @@ package com.adrian.bucayan
 
 import android.app.Activity
 import android.content.Context
-import androidx.multidex.MultiDex
-import androidx.multidex.MultiDexApplication
+import android.support.multidex.MultiDex
+import android.support.multidex.MultiDexApplication
 import com.adrian.bucayan.di.component.DaggerAppComponent
 import com.adrian.bucayan.di.modules.AppModule
 import com.adrian.bucayan.di.modules.NetModule
@@ -28,7 +28,7 @@ class Application : MultiDexApplication(), HasActivityInjector {
 
         DaggerAppComponent.builder()
                 .appModule(AppModule(this))
-                .netModule(NetModule(Constants.PILOT_SERVER, this))
+                .netModule(NetModule(Constants.SERVER, this))
                 .build().inject(this)
 
         if (BuildConfig.DEBUG) {
