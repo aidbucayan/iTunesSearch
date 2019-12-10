@@ -7,14 +7,13 @@ import dagger.android.support.AndroidSupportInjection
 
 abstract class BaseFragment : Fragment()  {
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onDetach() {
