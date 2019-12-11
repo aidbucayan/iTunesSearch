@@ -117,7 +117,7 @@ class Utils @Inject constructor(private val context: Context) {
         return service.isProviderEnabled(LocationManager.GPS_PROVIDER)
     }
 
-    fun openUrl(url: String) {
+    fun openUrl(context: Context, url: String) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         if (intent.resolveActivity(context.packageManager) != null) {
             context.startActivity(intent)

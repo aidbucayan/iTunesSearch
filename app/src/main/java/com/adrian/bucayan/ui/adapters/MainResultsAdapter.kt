@@ -9,7 +9,9 @@ import com.adrian.bucayan.R
 import com.adrian.bucayan.models.Results
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row_card_view.view.*
-
+/**
+ * @author Adrian Bucayan
+ */
 class MainResultsAdapter (private var newsList: List<Results>, var callback: (Results) -> Unit) :
         RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -31,6 +33,7 @@ class MainResultsAdapter (private var newsList: List<Results>, var callback: (Re
             itemView.card_view_trackName.text = results.trackName
             itemView.card_view_price.text = results.trackPrice.toString() + " " + results.currency
             itemView.primaryGenreName.text = results.primaryGenreName
+            itemView.card_view_row.setOnClickListener { clickListener(results)}
 
             Picasso.get().load(results.artworkUrl100)
                 .centerCrop().fit()

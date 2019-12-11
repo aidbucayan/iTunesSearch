@@ -4,6 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject
 
+/**
+ * @author Adrian Bucayan
+ */
+
 class MyViewModelFactory @Inject constructor(
     private val mainViewModel: MyViewModel) : ViewModelProvider.Factory {
 

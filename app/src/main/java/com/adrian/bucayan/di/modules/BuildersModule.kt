@@ -1,6 +1,6 @@
 package com.adrian.bucayan.di.modules
 
-import com.adrian.bucayan.MainActivity
+import com.adrian.bucayan.ui.activities.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

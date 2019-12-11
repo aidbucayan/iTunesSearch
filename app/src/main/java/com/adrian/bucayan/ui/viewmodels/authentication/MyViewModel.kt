@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.adrian.bucayan.data.remote.ApiInterface
 import com.adrian.bucayan.di.Repository
 import com.adrian.bucayan.models.ItunesResponse
+import com.adrian.bucayan.models.Results
 import com.google.gson.JsonParser
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableObserver
@@ -40,7 +41,7 @@ class MyViewModel @Inject constructor(private val apiInterface: ApiInterface,
         return iTunesResponseLoader
     }
 
-    fun search() {
+    fun search(search: String, iso: String, media: String) {
 
         iTunesResponseObserver  = object : DisposableObserver<Response<ItunesResponse>>() {
 
@@ -83,13 +84,12 @@ class MyViewModel @Inject constructor(private val apiInterface: ApiInterface,
 
         }
 
-        repository.queryItunesApi("star","au","movie")
+        repository.queryItunesApi(search,iso,media)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .debounce(100, MILLISECONDS)
                 .subscribe(iTunesResponseObserver)
 
     }
-
 
 }

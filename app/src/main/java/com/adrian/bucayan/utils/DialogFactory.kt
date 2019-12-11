@@ -62,9 +62,9 @@ class DialogFactory {
             val isoCountries: Array<String> = Locale.getISOCountries()
             for (country in isoCountries) {
                 val locale = Locale("en", country)
-                val iso: String = locale.getISO3Country()
-                val code: String = locale.getCountry()
-                val name: String = locale.getDisplayCountry()
+                val iso: String = locale.isO3Country
+                val code: String = locale.country
+                val name: String = locale.displayCountry
                 if ("" != iso && "" != code && "" != name) {
                     mCountry.add(name)
                 }
@@ -73,23 +73,20 @@ class DialogFactory {
             return mCountry.toTypedArray()
         }
 
-       /* fun showMedia(context: Context, title: String, callback: MaterialDialog.ListCallback): Dialog {
+       fun showMedia(context: Context, title: String, callback: MaterialDialog.ListCallback): Dialog {
 
-            val all: EnumSet<Media> = EnumSet.allOf(Media::class.java)
-            val list: List<String> = ArrayList(all.size)
-            for (s in all) {
-                list.add(s)
-            }
+           val mediaList = context.resources.getStringArray(R.array.media_list)
+
             return MaterialDialog.Builder(context)
                 .title(title)
                 .titleColorRes(R.color.black)
                 .titleGravity(GravityEnum.CENTER)
-                .items(*all)
+                .items(*mediaList)
                 .itemsColorRes(R.color.black)
                 .itemsGravity(GravityEnum.CENTER)
                 .itemsCallback(callback)
                 .show()
-        }*/
+        }
 
     }
 

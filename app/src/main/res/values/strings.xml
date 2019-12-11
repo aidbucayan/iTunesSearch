@@ -8,6 +8,20 @@
     <string name="select_country">Select Country</string>
     <string name="country">Country</string>
     <string name="media">Media</string>
+    <string name="select_media">Select Media</string>
     <string name="no_connectivity_title">Network Unavailable</string>
     <string name="no_connectivity_text">Network is currently unavailable.</string>
+
+    <string-array name="media_list">
+        <item>movie</item>
+        <item>podcast</item>
+        <item>music</item>
+        <item>musicVideo</item>
+        <item>audiobook</item>
+        <item>shortFilm</item>
+        <item>tvShow</item>
+        <item>software</item>
+        <item>ebook</item>
+        <item>all</item>
+    </string-array>
 </resources>
