@@ -2,8 +2,8 @@ package com.adrian.bucayan
 
 import android.app.Activity
 import android.content.Context
-import android.support.multidex.MultiDex
-import android.support.multidex.MultiDexApplication
+import androidx.multidex.MultiDex
+import androidx.multidex.MultiDexApplication
 import com.adrian.bucayan.di.component.DaggerAppComponent
 import com.adrian.bucayan.di.modules.AppModule
 import com.adrian.bucayan.di.modules.NetModule

@@ -1,10 +1,9 @@
 package com.adrian.bucayan.ui.viewmodels.authentication
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.adrian.bucayan.data.remote.ApiInterface
 import com.adrian.bucayan.di.Repository
 import com.adrian.bucayan.models.ItunesResponse

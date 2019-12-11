@@ -1,7 +1,7 @@
 package com.adrian.bucayan.di.modules
 
 import android.app.Application
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import com.adrian.bucayan.ui.viewmodels.authentication.MyViewModelFactory
 import com.adrian.bucayan.utils.Pref
 import com.adrian.bucayan.utils.Utils

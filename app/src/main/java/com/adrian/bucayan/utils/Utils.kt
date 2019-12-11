@@ -10,7 +10,6 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.net.Uri
 import android.os.Build
-import android.support.v4.content.res.ResourcesCompat
 import android.text.Editable
 import android.text.Html
 import android.text.Spanned
@@ -19,6 +18,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.Transformation
+import androidx.core.content.res.ResourcesCompat
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone
 import org.joda.time.LocalTime
